@@ -9,3 +9,9 @@ def home(request):
 
 def about(request):
     return render(request, 'pages/about.html')
+
+
+def about(request):
+    return render(request, 'pages/blog.html')
+
+
