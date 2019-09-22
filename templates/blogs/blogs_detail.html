@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Blogs
+{% endblock %}
+
+{% block content %}
+    {{ blog.date }}   {{ blog.author }}<br>
+    {{ blog.title }}<br>
+    {{ blog.content }}
+{% endblock %}

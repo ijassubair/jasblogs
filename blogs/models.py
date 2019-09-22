@@ -10,6 +10,7 @@ from django.db import models
 
 class Blog(models.Model):
     title = models.CharField(max_length=100)
+    slug = models.SlugField()
     content = models.TextField()
     author = models.CharField(max_length=50)
     date = models.DateTimeField(auto_now=True)

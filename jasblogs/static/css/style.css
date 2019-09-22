@@ -1,0 +1,15 @@
+#main {
+    min-height: 700px;
+    background: url("../images/me-three.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.dark-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    min-height: 700px;
+}
+
+.main-inner {
+    padding-top: 200px;
+}
