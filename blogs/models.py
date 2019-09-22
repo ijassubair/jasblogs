@@ -14,5 +14,8 @@ class Blog(models.Model):
     author = models.CharField(max_length=50)
     date = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.title
+
 
 
