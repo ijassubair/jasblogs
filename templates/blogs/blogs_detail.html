@@ -5,7 +5,22 @@
 {% endblock %}
 
 {% block content %}
-    {{ blog.date }}   {{ blog.author }}<br>
-    {{ blog.title }}<br>
-    {{ blog.content }}
+    <div class="container py-3">
+        <div class="d-flex justify-content-between">
+            <div>{{ blog.date|date:"Y-m-d" }}</div>
+            <div>{{ blog.author }}</div>
+        </div>
+        <hr>
+{#        {{ blog.title }}<br>#}
+        {{ blog.content|safe }}
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript">
+        let images = document.querySelectorAll('img');
+        for (let i = 0; i < images.length; i++) {
+            images[i].classList.add('img-fluid')
+        }
+    </script>
 {% endblock %}
