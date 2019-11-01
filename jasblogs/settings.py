@@ -116,38 +116,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'jasblogs/static')
-]
-
-STATIC_URL = '/static/'
-
-
-# ckeditor config.
 CKEDITOR_UPLOAD_PATH = "uploads/"
-# CKEDITOR_CONFIGS = {
-#     'default': {
-#         'toolbar_Full': [
-#             ['Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo'],
-#             ['Link', 'Unlink', 'Anchor'],
-#             ['Image', 'Flash', 'Table', 'HorizontalRule'],
-#             ['TextColor', 'BGColor'],
-#             ['Smiley', 'SpecialChar'], ['Source'],
-#             ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-#             ['NumberedList', 'BulletedList'],
-#             ['Indent', 'Outdent'],
-#             ['Maximize'],
-#         ],
-#         'extraPlugins': 'justify,liststyle,indent',
-#     },
-#     #     'special': {
-#     #         'toolbar': 'Special',
-#     #         'toolbar_Special': [
-#     #             ['Bold'], ['CodeSnippet'],
-#     #         ],
-#     #         'extraPlugins': 'codesnippet',
-#     #     }
-#     # }
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': [['CodeSnippet', ],
@@ -171,3 +140,10 @@ CKEDITOR_CONFIGS = {
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'jasblogs/static')
+]
+
+STATIC_URL = '/static/'
