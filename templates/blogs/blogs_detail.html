@@ -6,12 +6,14 @@
 
 {% block content %}
     <div class="container py-3">
+
+        <h1 style="text-align: center">{{ blog.title }}</h1>
+        <hr>
         <div class="d-flex justify-content-between">
             <div>{{ blog.date|date:"Y-m-d" }}</div>
             <div>{{ blog.author }}</div>
         </div>
         <hr>
-{#        {{ blog.title }}<br>#}
         {{ blog.content|safe }}
     </div>
 {% endblock %}
