@@ -7,15 +7,20 @@
 
 {% block content %}
     <header id="main">
+        {% include 'includes/navbar.html' %}
         <div class="dark-overlay">
             <div class="main-inner">
                 <div class="text-center text-light">
-                    <h3 class="display-3">Hey, Welcome...!</h3>
-                     <h3 class="display-3">I am Ijas Subair</h3>
-                    <h4 class="mb-4">Developer | Blogger</h4>
-                    <a href="{% url 'about' %}" class="btn btn-outline-light btn-lg mr-2">About</a>
-                    <a href="{% url 'blogs' %}" class="btn btn-outline-light btn-lg">Blog</a>
+                    {#                    <h3 class="display-3">Hey, Welcome...!</h3>#}
+                    {#                    <h3 class="display-3">I am Ijas Subair</h3>#}
+                    <h3 class="display-3 d-inline pb-2 border-bottom">I'm Ijas Subair</h3>
+{#                    <h4>Developer, Blogger</h4>#}
+                    <h3 class="mt-4">Developer | Blogger</h3>
+                    {#                    <a href="{% url 'about' %}" class="btn btn-outline-light btn-lg mr-2">About</a>#}
+                    {#                    <a href="{% url 'blogs' %}" class="btn btn-outline-light btn-lg">Blog</a>#}
                 </div>
             </div>
+        </div>
+        {% include 'includes/footer.html' %}
     </header>
 {% endblock %}
