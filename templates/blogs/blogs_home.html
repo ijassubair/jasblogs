@@ -6,17 +6,30 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container mt-3">
-        {% for blog in blogs %}
-            <div class="row mb-3 border border-dark p-3 bg-secondary text-light">
-                <div class="col-md-3">
-                    <img class="img-fluid" src="{% static 'images/nature.jpg' %}" alt="">
+    <div class="container my-3">
+        <div class="row">
+
+            {% for blog in blogs %}
+
+                <div class="col-md-6 col-lg-4 d-flex align-items-stretch my-3">
+                    <div class="card bg-light">
+                        <img class="card-img-top" src="{% static 'images/nature.jpg' %}" alt="">
+                        <div class="card-body">
+
+                            <h5 class="card-title"><a class="text-dark" href="{% url 'blog' blog.slug %}">
+                                <h3>{{ blog.title }}</h3></a></h5>
+{#                            <p class="card-text">{{ blog.content|truncatewords:"20" }}</p>#}
+                            <div class="text-right">
+{#                                <a href="{% url 'blog' blog.slug %}" class="btn btn-dark">Read More...</a>#}
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="col-md-9">
-                    <a class="text-light" href="{% url 'blog' blog.slug %}"><h3>{{ blog.title }}</h3></a>
-                   <!--<p> blog.content|truncatewords:10 </p>-->
-                </div>
-            </div>
-        {% endfor %}
+
+
+            {% endfor %}
+        </div>
+
     </div>
 {% endblock %}
