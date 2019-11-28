@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark {% if not request.path == '/' %} bg-dark {% endif %} py-4 sticky-top" style="font-size: 1.1rem;">
+<nav class="navbar navbar-expand-xl navbar-dark {% if not request.path == '/' %} bg-dark {% endif %} py-4 sticky-top" style="font-size: 1.1rem;">
     <a class="navbar-brand" href="{% url 'home' %}"><strong style="font-family: 'Gloria Hallelujah', cursive; letter-spacing: 0.3rem;">IJAS.LIVE</strong></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,6 +17,12 @@
             </li>
             <li class="nav-item active px-lg-5">
                 <a class="nav-link" href="{% url 'blogs' %}">Blog</a>
+            </li>
+            <li class="nav-item active px-lg-5">
+                <a class="nav-link" href="{% url 'about' %}">Categories</a>
+            </li>
+            <li class="nav-item active px-lg-5">
+                <a class="nav-link" href="{% url 'about' %}">Services</a>
             </li>
            <!-- <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
