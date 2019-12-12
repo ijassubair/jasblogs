@@ -11,6 +11,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 class Blog(models.Model):
     title = models.CharField(max_length=100)
+    thumbnail = models.ImageField(upload_to='thumbnails/', blank=True)
     slug = models.SlugField()
     content = RichTextUploadingField()
     author = models.CharField(max_length=50)
