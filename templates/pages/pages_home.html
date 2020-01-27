@@ -6,21 +6,167 @@
 {% endblock %}
 
 {% block content %}
-    <header id="main">
-        {% include 'includes/navbar.html' %}
-        <div class="dark-overlay">
-            <div class="main-inner">
-                <div class="text-center text-light">
-                    {#                    <h3 class="display-3">Hey, Welcome...!</h3>#}
-                    {#                    <h3 class="display-3">I am Ijas Subair</h3>#}
-                    <h3 class="display-3 d-inline pb-2 border-bottom">I'm Ijas Subair</h3>
-{#                    <h4>Developer, Blogger</h4>#}
-                    <h3 class="mt-4">Developer | Blogger</h3>
-                    {#                    <a href="{% url 'about' %}" class="btn btn-outline-light btn-lg mr-2">About</a>#}
-                    {#                    <a href="{% url 'blogs' %}" class="btn btn-outline-light btn-lg">Blog</a>#}
+    <section id="home">
+        <div class="container text-center">
+            <div class="intro-header text-light">
+                <h1 class="display-1">I'm Ijas Subair</h1>
+                <p class="lead mt-3">B.Tech Computer Science Student | Programmer | Web Developer | Blogger</p>
+                <a class="mt-2 btn btn-outline-light btn-lg w-25" href="{% url 'blogs' %}">Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="py-5 my-5">
+    <h1 class="mb-4 text-center">Trending Blogs</h1>
+        <div class="container">
+            <div class="row">
+                {% for blog in blogs %}
+                    <div class="col-md-6 col-lg-4 my-3 pr-5">
+                        <div class="card">
+                            <img class="card-img-top img-fluid" src="{{ blog.thumbnail.url }}" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title"><a class="text-dark text-decoration-none" href="{% url 'blog' blog.slug %}">
+                                    <h3 class="card-head">{{ blog.title }}</h3></a></h5>
+                                {#                            <p class="card-text">{{ blog.content|truncatewords:"20" }}</p>#}
+                                <div class="text-right">
+                                    {#                                <a href="{% url 'blog' blog.slug %}" class="btn btn-dark">Read More...</a>#}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <hr class="home-hr">
+    <section id="profile" class="pt-5 mb-5">
+        <div>
+            <h1 class="mb-4 text-center">Profile</h1>
+            <div class="row">
+                <div class="col-lg-6 text-center profile-col-1 mb-5 mb-md-none">
+                    <img src="{% static 'images/about.jpg' %}" class="img-fluid" width="70%" height="70%"
+                         alt="My Picture">
+                </div>
+
+                <div class="col-lg-6 align-self-center px-5">
+
+                    <p class="lead text-justify">Hey there! I am Ijas Subair from Calicut, Kerala. Welcome to my blog
+                        and I'm glad
+                        that you checked
+                        out my profile. I'm a B.tech CSE student from
+                        MEA Engineering College,Perinthalmanna.When join to B.tech I started to learn coding and Now i
+                        love coding and Web development.
+                        During this time i decided to start this Blog ijas.live.In this blog i publish my own articles
+                        and guest posts.so you can contribute
+                        your shining articles and get published.Happy reading,thank you.</p>
                 </div>
             </div>
         </div>
-        {% include 'includes/footer.html' %}
-    </header>
+    </section>
+    <hr class="home-hr">
+
+    <section id="contact" class="pt-5">
+        <div>
+            <h1 class="mb-3 text-center" id="contactme">Contact Me</h1>
+            <div class="container">
+                <div class="row py-4">
+                    <div class="col-lg-4 mb-2 mb-md-none">
+                        <div class="card custom-card border border-dark text-center">
+                            <div class="card-body">
+                                <h3><i class="fa fa-location-arrow fa-1x"></i></h3>
+                                <div class="h2">Address</div>
+                                <p class="lead">Mukkam Kozhikode Kerala IN</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-2 mb-md-none">
+                        <div class="card custom-card border border-dark text-center">
+                            <div class="card-body">
+                                <h3><i class="fa fa-envelope fa-1x"></i></h3>
+                                <div class="h2">Email</div>
+                                <p class="lead">hello@ijas.live</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card custom-card border border-dark text-center">
+                            <div class="card-body">
+                                <h3><i class="fa fa-phone fa-1x"></i></h3>
+                                <div class="h2">Pcshone</div>
+                                <p class="lead">+91 8 157 865 848</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-5 text-center">
+                    <h3>Have a question or want to publish your article here?</h3>
+                    <h3 class="lead">
+                        Enter your details and I'll get back to you soon.</h3>
+                </div>
+                <div id="form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Full Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Email</label>
+                            <input type="text" name="name" id="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" class="form-control" cols="30"
+                                      rows="10"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-outline-dark btn-block">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr class="home-hr">
+    <section id="connect" class="py-3 my-4">
+        <div class="text-center">
+            <h2 class="mb-4">Let's Connect</h2>
+        </div>
+        <div class="container">
+            {#            <div class="row justify-content-center text-center">#}
+            {##}
+            {#                #}
+            {#            </div>#}
+            <div class="d-flex justify-content-center">
+                <div class="mr-2">
+                    <i class="fa fa-facebook bg-dark p-2 px-2 text-white"></i>
+                </div>
+                <div class="mr-2">
+                    <i class="fa fa-twitter bg-dark p-2 px-2 text-white"></i>
+                </div>
+                <div class="mr-2">
+                    <i class="fa fa-instagram bg-dark p-2 px-2 text-white"></i>
+                </div>
+                <div>
+                    <i class="fa fa-linkedin bg-dark p-2 px-2 text-white"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block js %}
+    <script>
+        $('#main-nav .nav-link-hash').on('click', function (e) {
+            e.preventDefault();
+
+            const hash = this.hash;
+
+            const offset = $(hash).offset().top;
+
+            $('html, body').animate({
+                scrollTop: offset
+            }, 1000, function () {
+                window.location.hash = hash
+            });
+        })
+    </script>
 {% endblock %}

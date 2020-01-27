@@ -1,29 +1,125 @@
-* {
-   font-family: 'Calistoga', cursive;
+#home {
+    background: #780206; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #212529, #0e68ca); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #212529, #0e68ca); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#main {
-    min-height: 80vh;
-    background: url("../images/image.jpg") no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+.navbar {
+    background-color: white !important;
+    /*border-top: 2px solid #000000;*/
+    border-bottom: 2px solid #000000;
 }
 
-.dark-overlay {
-    background: rgba(0, 0, 0, 0.5);
-    min-height: 100vh;
+.card-head:hover {
+    color: orange;
 }
 
-.main-inner {
-    padding-top: 220px;
+#profile {
+    /*    height: 100vh;*/
+    /*    display: flex;*/
+    padding: 0 1rem;
+    /*    align-items: center;*/
 }
 
-.footer-dark {
-    background: rgba(0, 0, 0, 0.5);
+.profile-col-1 {
+    border-right: 1px solid #000000;
 }
 
-/*.center{*/
-/*    margin-left: auto;*/
-/*    margin-right: auto;*/
-/*    margin-top: 20px;*/
+
+#skills {
+    background: #780206; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #212529, #0e68ca); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #212529, #0e68ca); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100vh;
+}
+
+
+/*#connect {
+   background: #780206; /* fallback for old browsers */
+/*background: -webkit-linear-gradient(to right, #212529, #0e68ca); /* Chrome 10-25, Safari 5.1-6 */
+/*  background: linear-gradient(to right, #212529, #0e68ca); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+/* }*/
+#contactme {
+    padding-top: 30px;
+}
+
+#form {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+#feelfree {
+    padding-top: 30px;
+}
+
+.form-control {
+    border: 1px solid #343a40;
+}
+
+.icon-size {
+    font-size: 1.5rem;
+}
+
+#footer {
+    background: #780206; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #212529, #0e68ca); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #212529, #0e68ca); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.home-hr {
+    height: 7px;
+    background: #000000;
+}
+
+/*.navbar a{*/
+/*    color: white !important;*/
+/*    font-size: 1.8rem !important;*/
+/*}*/
+
+@media (max-width: 992px) {
+    .profile-col-1 {
+        border-right: none;
+    }
+}
+
+/*@media (min-width:768px) and (max-width: 992px) {*/
+/*     #profile {*/
+/*        height: 200vh;*/
+/*    }*/
+
+/*}*/
+
+/*@media (max-width: 600px) {*/
+/*    #profile {*/
+/*        height: 120vh;*/
+/*    }*/
+/*}*/
+
+/*@media (min-width: 600px) {*/
+/*    #profile {*/
+/*        height: 130vh;*/
+/*    }*/
+
+/*}*/
+
+/*@media (min-width: 768px) {*/
+/*    #profile {*/
+/*        height: 140vh;*/
+/*    }*/
+
+/*}*/
+
+/*@media (min-width: 992px) {*/
+/*    #profile {*/
+/*        height: 100vh;*/
+/*    }*/
+/*    .profile-col-1 {*/
+/*        border-right: 1px solid #000000;*/
+/*    }*/
 /*}*/
