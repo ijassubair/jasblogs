@@ -86,6 +86,10 @@
     .profile-col-1 {
         border-right: none;
     }
+
+    .custom-title {
+        font-size: 3rem;
+    }
 }
 
 /*@media (min-width:768px) and (max-width: 992px) {*/
