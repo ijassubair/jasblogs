@@ -1,3 +1,9 @@
 from django.contrib import admin
+from pages.models import Contact
 
-# Register your models here.
+
+class ContactAdmin(admin.ModelAdmin):
+    list_filter = ['article_ready']
+
+
+admin.site.register(Contact, ContactAdmin)

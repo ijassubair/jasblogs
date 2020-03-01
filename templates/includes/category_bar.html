@@ -1,20 +1,9 @@
-<div id="category-bar" class="d-flex">
-    <div>
-        Technology
-    </div>
-    <div>
-        Technology
-    </div>
-    <div>
-        Technology
-    </div>
-    <div>
-        Technology
-    </div>
-    <div>
-        Technology
-    </div>
-    <div>
-        Technology
-    </div>
+<div class="bg-dark btn-block w-100 d-md-none text-center text-light p-3 sticky-top" style="cursor: pointer" data-toggle="collapse"
+     data-target="#category-bar">Categories <i class="fa fa-arrow-down"></i></div>
+<div id="category-bar" class="collapse d-md-flex justify-content-around py-2 bg-dark text-center lead">
+    {% for cat in categories %}
+        <div class="mb-2">
+            <a href="#{{ cat.title }}1" class="cat-item text-light">{{ cat.title }}</a>
+        </div>
+    {% endfor %}
 </div>

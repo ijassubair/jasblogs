@@ -1,7 +1,7 @@
 #home {
     background: #780206; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #212529, #0e68ca); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #212529, #0e68ca); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, #212529, #340693db); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #212529, #340693db); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     height: 100vh;
     display: flex;
     align-items: center;
@@ -14,10 +14,14 @@
     border-bottom: 2px solid #000000;
 }
 
-.card-head:hover {
-    color: orange;
+.card-body:hover {
+    background-color: black;
+    color: white;
 }
 
+.bg-custom {
+    background-color: #fafafa;
+}
 #profile {
     /*    height: 100vh;*/
     /*    display: flex;*/
@@ -32,8 +36,8 @@
 
 #skills {
     background: #780206; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #212529, #0e68ca); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #212529, #0e68ca); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, #212529, #340693db); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #212529, #340693db); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     height: 100vh;
 }
 
@@ -67,14 +71,36 @@
 
 #footer {
     background: #780206; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #212529, #0e68ca); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #212529, #0e68ca); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, #212529, #340693db); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #212529, #340693db); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
 .home-hr {
     height: 7px;
     background: #000000;
+}
+
+.custom-img {
+    display: block;
+    margin: 0 auto;
+}
+
+.c-head {
+    font-family: 'Tomorrow', sans-serif;
+}
+
+.b-head {
+    font-family: 'Lato', sans-serif;
+
+}
+
+.asteriskField {
+    display: none;
+}
+
+.bg-custom .card {
+    box-shadow: 5px 5px #eee;
 }
 
 /*.navbar a{*/
@@ -88,7 +114,7 @@
     }
 
     .custom-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 }
 
