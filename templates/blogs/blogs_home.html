@@ -6,25 +6,59 @@
 {% endblock %}
 
 {% block content %}
-   <div class="container my-3">
-            <div class="row">
-                {% for blog in blogs %}
-                    <div class="col-md-6 col-lg-4 my-3 pr-5">
-                        <div class="card">
-                            <img class="card-img-top" src="{{ blog.thumbnail.url }}" alt="" height="300" width="300">
-                            <div class="card-body">
-                                <h5 class="card-title"><a class="text-dark text-decoration-none" href="{% url 'blog' blog.slug %}">
-                                    <h3 class="card-head">{{ blog.title }}</h3></a></h5>
-                                {#                            <p class="card-text">{{ blog.content|truncatewords:"20" }}</p>#}
-                                <div class="text-right">
-                                    {#                                <a href="{% url 'blog' blog.slug %}" class="btn btn-dark">Read More...</a>#}
+    {% include 'includes/category_bar.html' %}
+    <div class="container my-3">
+        {% for cat in categories %}
+            {% for blog in cat.blog_set.all %}
+
+
+                <div class="row justify-content-center" id="{{ cat.title }}{{ forloop.counter }}">
+                    <div class="col-11 col-lg-9 my-3">
+                        <div class="container">
+                            <div class="card p-3 border border-dark">
+                                <h5>{{ cat.title }}</h5>
+                                <div class="row p-3">
+                                    <div class="col-md-4 p-0">
+                                        <a href="{% url 'blog' blog.slug %}"><img class="card-img-top"
+                                                                                  height="200"
+                                                                                  width="200"
+                                                                                  src="{{ blog.thumbnail.url }}"
+                                                                                  alt="{{ blog.title }}"/></a>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <a class="text-dark text-decoration-none" href="{% url 'blog' blog.slug %}">
+                                            <h3 class="mt-4 mt-md-0 b-head">{{ blog.title }}</h3></a>
+                                        <p class="lead text-justify">{{ blog.description }}</p>
+                                        <div class="text-right pb-2 pb-md-0 pt-md-5">
+                                            <a href="{% url 'blog' blog.slug %}" class="btn btn-dark">Read <i
+                                                    class="fa fa-arrow-right"></i></a>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endblock %}
 
-                {% endfor %}
-            </div>
-        </div>
+{% block js %}
+    <script>
+        $('#category-bar .cat-item').on('click', function (e) {
+            e.preventDefault();
+
+            const hash = this.hash;
+
+            const offset = $(hash).offset().top;
+
+            $('html, body').animate({
+                scrollTop: offset
+            }, 1000, function () {
+                window.location.hash = hash
+            });
+        })
+    </script>
 {% endblock %}

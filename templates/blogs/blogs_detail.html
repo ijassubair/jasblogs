@@ -1,20 +1,87 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
     Blogs
 {% endblock %}
 
 {% block content %}
-    <div class="container py-3">
+    <div class="py-3 px-2 px-md-4 bg-custom">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card p-3">
+                    <h1 style="text-align: center" class="b-head">{{ blog.title }}</h1>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <div>{{ blog.date|date:"Y-m-d" }}</div>
+                        <div class="pr-md-3">{{ blog.author }}</div>
+                    </div>
+                    <hr>
+                    {{ blog.content|safe }}
+                </div>
+                <div class="card p-3 mb-2">
+                    <img src="
+                            {% if blog.author_photo %}{{ blog.author_photo.url }}{% else %}{% static 'images/person-outline-icon-png-person-outline-icon-png-person-17.png' %}{% endif %}"
+                         alt="Author photo" height="130" width="130"
+                         class="rounded-circle img-fluid mb-1">
+                    <h4 class="text-center c-head"><i class="fa fa-edit"></i> {{ blog.author }}</h4>
 
-        <h1 style="text-align: center">{{ blog.title }}</h1>
-        <hr>
-        <div class="d-flex justify-content-between">
-            <div>{{ blog.date|date:"Y-m-d" }}</div>
-            <div>{{ blog.author }}</div>
+                    <hr>
+                    <p class="text-justify text-center lead">{{ blog.author_bio }} B.Tech Computer Science student in MEA
+                        ENginnering College, Perinthalmanna.m</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-3 mt-md-0">
+
+                <div class="card p-3">
+                    <h4 class="text-center c-head">Related Articles</h4>
+                    {% for b in related_blogs %}
+                        <hr>
+
+                        <div class="row pl-3 pt-2 mb-2">
+                            <div class="col-4 p-0">
+                                <a href="{% url 'blog' b.slug %}"><img class="card-img-top"
+                                                                       height="200"
+                                                                       width="200"
+                                                                       src="{{ b.thumbnail.url }}"
+                                                                       alt="{{ b.title }}"/></a>
+                            </div>
+                            <div class="col-8">
+
+                                <a class="text-dark text-decoration-none" href="{% url 'blog' b.slug %}">
+                                    <h5 class="b-head">{{ b.title }}</h5></a>
+
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="card p-3 mt-3">
+                    <h4 class="text-center c-head">Also Read</h4>
+                    {% for bl in also_read %}
+                        <hr>
+
+                        <div class="row pl-3 pt-2 mb-2">
+                            <div class="col-4 p-0">
+                                <a href="{% url 'blog' bl.slug %}"><img class="card-img-top"
+                                                                       height="200"
+                                                                       width="200"
+                                                                       src="{{ bl.thumbnail.url }}"
+                                                                       alt="{{ bl.title }}"/></a>
+                            </div>
+                            <div class="col-8">
+
+                                <a class="text-dark text-decoration-none" href="{% url 'blog' bl.slug %}">
+                                    <h5 class="b-head">{{ bl.title }}</h5></a>
+
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
         </div>
-        <hr>
-        {{ blog.content|safe }}
+
     </div>
 {% endblock %}
 
@@ -22,7 +89,7 @@
     <script type="text/javascript">
         let images = document.querySelectorAll('img');
         for (let i = 0; i < images.length; i++) {
-            images[i].classList.add('img-fluid')
+            images[i].classList.add('img-fluid', 'custom-img')
         }
     </script>
 {% endblock %}

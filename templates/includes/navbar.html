@@ -1,28 +1,31 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg navbar-light bg-dark sticky-top" id="main-nav">
-        <a class="navbar-brand ml-4" href="{% url 'home' %}">
-            <img src="{% static 'images/bootstrap-solid.svg' %}" width="30" height="30" class="d-inline-block align-top"
+        <a class="navbar-brand pl-2" href="{% url 'home' %}">
+            <img src="{% static 'images/mylogo.jpg' %}" width="50" height="50" class="d-inline-block align-center"
                  alt="">
-            IJAS.LIVE
+            <span style="font-family: 'Permanent Marker', cursive;font-size: 1.3rem" class="pl-1.5">IJAS.LIVE</span>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-r"
+        <button class="navbar-toggler border-dark" type="button" data-toggle="collapse" data-target="#navbar-r"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbar-r">
+        <div class="collapse navbar-collapse c-head" id="navbar-r">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item mr-5 active">
-                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    <a class="nav-link font-weight-bold" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item mr-5 active">
-                    <a class="nav-link nav-link-hash" href="{% if not request.path == '/' %}/{% endif %}#profile">Profile</a>
+                    <a class="nav-link font-weight-bold nav-link-hash" href="{% if not request.path == '/' %}/{% endif %}#profile-hr">Profile</a>
                 </li>
                 <li class="nav-item mr-5 active">
-                    <a class="nav-link nav-link-hash" href="{% if not request.path == '/' %}/{% endif %}#contact">Contact</a>
+                    <a class="nav-link font-weight-bold nav-link-hash" href="{% if not request.path == '/' %}/{% endif %}#contact">Contact</a>
                 </li>
                 <li class="nav-item mr-5 active">
-                    <a class="nav-link" href="{% url 'blogs' %}">Blog</a>
+                    <a class="nav-link font-weight-bold" href="{% url 'blogs' %}">Blog</a>
+                </li>
+                <li class="nav-item mr-lg-5">
+                    <a class="nav-link nav-link-hash btn btn-dark text-light p-2 btn-block" href="{% if not request.path == '/' %}/{% endif %}#contact">Publish Article</a>
                 </li>
             </ul>
         </div>
